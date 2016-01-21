@@ -27,13 +27,14 @@ return array(
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
             'perguntas' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/perguntas',
+                    'route' => '/perguntas[/page/:page]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller' => 'Perguntas',
                         'action' => 'index',
+                        'page' => 1
                     ),
                 ),
                 'may_terminate' => true,

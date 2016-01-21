@@ -5,12 +5,12 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-10 col-xs-12">
-                            <span class="tituloConteudo"> <?php echo $this->titulo; ?> </span>
+                            <span class="tituloConteudo"> Sistema de enquete da Xys</span>
                             <span class="subTituloConteudo"> <?php echo $this->subTitulo; ?> </span>
                         </div>
                         <div class="col-md-2 col-xs-12 left">
                             <a href="<?php echo $this->url('pergunta-cadastrar'); ?>">
-                                <div class="btn btn-info"> Cadastrar pergunta</div>
+                                <div class="btn btn-info"> Cadastrar enquete</div>
                             </a>
                         </div>
                     </div>
@@ -20,11 +20,11 @@
                 <div class="panel panel-default conteudoInterno">
                     <div class="tituloRegistrosEncontrados">Foram encontrados
                         <strong><?php echo $this->qtdRegistros; ?>
-                            perguntas</strong>
+                            enquetes</strong>
                     </div>
                     <div class="menuRegistros col-md-12 col-xs-2 ">
-                        <div class="col-md-6 col-xs-2"> Nome</div>
-                        <div class="col-md-2 col-xs-2"> QTD. Votos</div>
+                        <div class="col-md-6 col-xs-2"> Nome </div>
+                        <div class="col-md-2 col-xs-2"> QTD. Votos </div>
                         <div class="col-md-1 col-xs-2"> Positivos </div>
                         <div class="col-md-1 col-xs-2 text-center"> Negativos </div>
                     </div>
@@ -77,4 +77,6 @@
         </div>
     </div>
 </div>
-<?php echo $this->paginationControl($this->data, 'Sliding', 'paginator'); ?>
+<?php if($this->qtdRegistros >= 10) {  ?>
+    <?php echo $this->paginationControl($this->data, 'Sliding', 'paginator'); ?>
+<?php } ?>

@@ -26,7 +26,7 @@ class PerguntaFilter extends InputFilter
                     'name' => 'NotEmpty',
                     'options' => array(
                         'messages' => array(
-                            'isEmpty' => 'Por favor, preencher o campo Nome.'
+                            'isEmpty' => 'Por favor, preencher o campo Enquete.'
                         )
                     )
                 ),

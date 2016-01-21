@@ -10,11 +10,14 @@ class PerguntasController extends CrudController
     public function __construct()
     {
         $this->entity = "Application\Entity\Pergunta";
+        $this->title = 'Pergunta ';
         $this->form = "Application\Form\Pergunta";
         $this->service = "Application\Service\Pergunta";
         $this->controller = "perguntas";
         $this->route = "perguntas";
         $this->paginaOrigem = $this->route;
+        $this->perPage = 10;
+
     }
 
     public function responderAction()

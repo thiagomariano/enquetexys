@@ -26,7 +26,7 @@ abstract class CrudController extends AbstractActionController
         $list = $this->getEm()->getRepository($this->entity)->queryCustom();
         $page = $this->params()->fromRoute('page');
         $paginator = new Paginator(new ArrayAdapter($list));
-        $paginator->setCurrentPageNumber($page)->setDefaultItemCountPerPage(10);
+        $paginator->setCurrentPageNumber($page)->setDefaultItemCountPerPage($this->perPage);
 
         $paginator = (object) $paginator;
         return new ViewModel(array('data' => $paginator, 'titulo' => $this->title, 'subTitulo' => $this->subTitle, 'qtdRegistros' => count($list), 'ultimaPagina' => $this->paginaOrigem));
@@ -46,7 +46,7 @@ abstract class CrudController extends AbstractActionController
                 #var_dump($request->getPost()->toArray()); exit;
                 $service->insert($request->getPost()->toArray());
 
-                return $this->redirect()->toRoute($this->route, array('controller' => $this->controller, 'titulo' => $this->title));
+                return $this->redirect()->toRoute($this->route, array('controller' => $this->controller, 'titulo' => $this->title, 'subTitulo' => $this->subTitle,));
             }
         }
 

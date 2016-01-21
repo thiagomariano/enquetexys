@@ -27,7 +27,7 @@ class Pergunta extends Form
         $nome = new Element\Text("nome");
         $nome->setAttributes(array(
             'class' => 'form-control',
-            'placeholder' => 'Entre com a nome',
+            'placeholder' => 'Entre com a pergunta',
         ));
         $this->add($nome);
 
