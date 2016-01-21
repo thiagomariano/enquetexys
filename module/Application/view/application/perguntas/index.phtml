@@ -1,0 +1,80 @@
+<div class="row conteudo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-10 col-xs-12">
+                            <span class="tituloConteudo"> <?php echo $this->titulo; ?> </span>
+                            <span class="subTituloConteudo"> <?php echo $this->subTitulo; ?> </span>
+                        </div>
+                        <div class="col-md-2 col-xs-12 left">
+                            <a href="<?php echo $this->url('pergunta-cadastrar'); ?>">
+                                <div class="btn btn-info"> Cadastrar pergunta</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default conteudoInterno">
+                    <div class="tituloRegistrosEncontrados">Foram encontrados
+                        <strong><?php echo $this->qtdRegistros; ?>
+                            perguntas</strong>
+                    </div>
+                    <div class="menuRegistros col-md-12 col-xs-2 ">
+                        <div class="col-md-6 col-xs-2"> Nome</div>
+                        <div class="col-md-2 col-xs-2"> QTD. Votos</div>
+                        <div class="col-md-1 col-xs-2"> Positivos </div>
+                        <div class="col-md-1 col-xs-2 text-center"> Negativos </div>
+                    </div>
+
+
+                    <?php foreach ($this->data as $data) { ?>
+                        <div class="registro row">
+                            <div class="col-md-6 col-xs-10"><?php echo $data['nome']; ?></div>
+                            <div class="col-md-2 col-xs-10"> <?php echo $data['total']; ?></div>
+                            <div class="col-md-1 col-xs-10 text-center"> <?php echo $data['respostaSim']; ?></div>
+                            <div class="col-md-1 col-xs-10 text-center"> <?php echo $data['respostaNao']; ?> </div>
+
+
+                            <div class="col-md-2 col-xs-2">
+                                <a href="
+                                    <?php echo $this->url('pergunta-responder', array(
+                                        'controller' => 'Pergunta',
+                                        'action' => 'responder',
+                                        'id' => $data['id']
+                                    )
+                                ); ?>">
+                                    <span class="glyphicon glyphicon-ok-circle col-md-1 col-xs-1 icon"
+                                          title="Responder Enquete">
+                                    </span>
+                                </a>
+
+                                <a href="<?php echo $this->url('pergunta-editar',
+                                    array('controller' => 'Pergunta',
+                                        'action' => 'editar',
+                                        'id' => $data['id'])); ?>">
+                                    <span class="glyphicon glyphicon-edit col-md-1 col-xs-1 icon"
+                                          title="Editar">
+                                    </span>
+                                </a>
+
+                                <a href="<?php echo $this->url('pergunta-excluir',
+                                    array('controller' => 'Membro',
+                                        'action' => 'excluir',
+                                        'id' => $data['id'])); ?>"><span
+                                        class="glyphicon glyphicon-remove hidden-xs col-md-1 icon"
+                                        title="Excluir">
+
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->paginationControl($this->data, 'Sliding', 'paginator'); ?>

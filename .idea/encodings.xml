@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/module/Application/src/Application/Form/Pergunta.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/src/Application/Form/PerguntaFilter.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/src/Application/Form/Resposta.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/src/Application/Form/RespostaFilter.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/index/cadastrar.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/index/editar.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/perguntas/cadastrar.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/perguntas/editar.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/perguntas/index.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module/Application/view/application/perguntas/responder.phtml" charset="UTF-8" />
+  </component>
+</project>

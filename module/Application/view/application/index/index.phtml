@@ -1,0 +1,76 @@
+<div class="row conteudo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-10 col-xs-12">
+                            <span class="tituloConteudo"> <?php echo $this->titulo; ?> </span>
+                            <span class="subTituloConteudo"> <?php echo $this->subTitulo; ?> </span>
+                        </div>
+                        <div class="col-md-2 col-xs-12 left">
+                            <!--<a href="<?php /*echo $this->url('membro-cadastrar'); */?>">
+                                <div class="btn btn-info"> Cadastrar membro</div>
+                            </a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group hidden-sm hidden-lg hidden-md">
+                    <div class="row">
+                        <div class="col-md-1 hidden-xs label-campo">Périodo 1:</div>
+                        <div class="col-md-2 col-xs-6">
+                            <input type="text" class="form-control text-center" placeholder="ínicio do período">
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <input type="text" class="form-control text-center" placeholder="Fim do período">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group hidden-xs">
+                    <div class="row">
+                        <div class="col-md-2 label-campo">Périodo de cadastro:</div>
+                        <div class="col-md-2 col-xs-5">
+                            <input type="text" class="form-control text-center" placeholder="ínicio do período">
+                        </div>
+                        <div class="col-md-2 col-xs-6">
+                            <input type="text" class="form-control text-center" placeholder="Fim do período">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default conteudoInterno">
+                    <div class="tituloRegistrosEncontrados">Foram encontrados <strong><?php echo $this->qtdRegistros; ?> membros</strong> cadastrados
+                    </div>
+                    <div class="menuRegistros"> Data e hora do envio</div>
+
+                    <?php foreach ($this->data as $produtos) { ?>
+                        <div class="registro row">
+                            <div class="col-md-11 col-xs-10"><?php echo $produtos->getNome(); ?></div>
+                            <div class="col-md-1 col-xs-2">
+                                <a href="<?php echo $this->url('membro-editar',
+                                    array('controller' => 'Membro',
+                                        'action' => 'editar',
+                                        'id' => $produtos->getId())); ?>">
+                                    <span class="glyphicon glyphicon-edit col-md-1 col-xs-1 icon"
+                                          title="Editar">
+                                    </span>
+                                </a>
+
+                                <a href="<?php echo $this->url('membro-excluir',
+                                    array('controller' => 'Membro',
+                                        'action' => 'excluir',
+                                        'id' => $produtos->getId())); ?>"><span
+                                        class="glyphicon glyphicon-remove hidden-xs col-md-1 icon"
+                                        title="Excluir">
+
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php # echo $this->paginationControl($this->data,'Sliding','paginator'); ?>

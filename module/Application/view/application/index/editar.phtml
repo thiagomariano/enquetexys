@@ -1,0 +1,148 @@
+<div class="row conteudo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-10 col-xs-12">
+                            <span class="tituloConteudo"> teste </span>
+                            <span class="subTituloConteudo"> cadastrar </span>
+                        </div>
+                        <div class="col-md-2 col-xs-12 left">
+                            <!-- espaco para botoes -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <?php $form = $this->form;
+                $form->setAttribute('action', $this->url('membro-editar'), array(
+                    'controller' => 'Membro',
+                    'action' => 'editar'
+                ));
+                $form->prepare();
+                $form->prepare();
+                echo $this->form()->openTag($form);
+                echo $this->formHidden($form->get('id')); ?>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Nome:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('nome')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Email:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('email')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Telefone:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('telefone')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Tipo:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('categoria')); ?>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Endereço:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('endereco')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Estado:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('estado')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Cidade:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('cidade')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Sexo:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('sexo')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Pode Receber visita:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('receberVisita')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Aceite:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('tipoAceite')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Decisão:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('tipoDecisao')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Entrevistador:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('idEntrevistador')); ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="col-md-4 col-xs-3 label-campo">Observações:</div>
+                        <div class="col-md-8 col-xs-9">
+                            <?php echo $this->formRow($form->get('observacoes')); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2 col-xs-offset-3 text-center">
+                        <?php echo $this->formSubmit($form->get('submit')); ?>
+                    </div>
+                </div>
+            </div>
+            <?php echo $this->form()->closeTag(); ?>
+        </div>
+    </div>
+</div>
+
+
+
